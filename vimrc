@@ -24,6 +24,7 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'godlygeek/tabular'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin indent on
