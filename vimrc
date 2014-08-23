@@ -25,6 +25,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
