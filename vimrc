@@ -49,3 +49,18 @@ set noswapfile
 colorscheme obsidian
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Map plugins
+let mapleader=","
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <Leader>t :TagbarToggle<CR>
+map <Leader>l :set nu! nornu<CR>
+map <Leader>rl :set nonu rnu!<CR>
+
+" Indent lines
+vnoremap > >gv
+vnoremap < <gv
+
+" Move lines up/down
+vnoremap <S-Up> :m '<-2<CR>gv
+vnoremap <S-Down> :m '>+1<CR>gv
