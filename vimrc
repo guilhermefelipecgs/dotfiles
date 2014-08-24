@@ -64,3 +64,5 @@ vnoremap < <gv
 " Move lines up/down
 vnoremap <S-Up> :m '<-2<CR>gv
 vnoremap <S-Down> :m '>+1<CR>gv
+
+set undofile
