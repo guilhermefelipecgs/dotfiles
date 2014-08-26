@@ -30,6 +30,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-surround'
 Plugin 'osyo-manga/vim-over'
+Plugin 'tpope/vim-abolish'
 
 call vundle#end()
 filetype plugin indent on
