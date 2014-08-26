@@ -29,6 +29,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-surround'
+Plugin 'osyo-manga/vim-over'
 
 call vundle#end()
 filetype plugin indent on
