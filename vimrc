@@ -48,7 +48,7 @@ set number
 
 set noswapfile
 
-if filereadable(expand("$HOME/.vim/bundle/vim-colorschemes"))
+if isdirectory(expand("$HOME/.vim/bundle/vim-colorschemes"))
   colorscheme obsidian
 endif
 
