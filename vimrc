@@ -48,7 +48,9 @@ set number
 
 set noswapfile
 
-colorscheme obsidian
+if filereadable(expand("$HOME/.vim/bundle/vim-colorschemes"))
+  colorscheme obsidian
+endif
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
