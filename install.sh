@@ -12,7 +12,14 @@ if [ ! -d "$HOME/.undodir" ]; then
   mkdir "$HOME/.undodir"
 fi
 
-git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+  git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+fi
+
+if [ -f "$HOME/.vimrc" ]; then
+  mv "$HOME/.vimrc" "$HOME/.vimrc.bak"
+fi
+
 ln -s "$PWD/vimrc" "$HOME/.vimrc"
 vim +PluginInstall +qall
 
