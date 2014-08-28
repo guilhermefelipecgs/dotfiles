@@ -7,31 +7,48 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" Git
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'tpope/vim-sensible'
+
+" Explorer
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-sensible'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'majutsushi/tagbar'
+
+" Rails
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
+
+" Syntax
 Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'mattn/emmet-vim'
+Plugin 'kchmck/vim-coffee-script'
+
+" Snippets
 Plugin 'honza/vim-snippets'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Others
+Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-abolish'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-surround'
+Plugin 'mbbill/undotree'
+Plugin 'terryma/vim-multiple-cursors'
+
+" Colors
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-surround'
 Plugin 'osyo-manga/vim-over'
-Plugin 'tpope/vim-abolish'
-Plugin 'mbbill/undotree'
+
+" Utility
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -55,12 +72,12 @@ endif
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Map plugins
 let mapleader=","
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>l :set nu! nornu<CR>
 map <Leader>rl :set nonu rnu!<CR>
+nnoremap <F5> :UndotreeToggle<CR>
 
 " Indent lines
 vnoremap > >gv
