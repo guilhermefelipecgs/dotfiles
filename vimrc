@@ -31,6 +31,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-surround'
 Plugin 'osyo-manga/vim-over'
 Plugin 'tpope/vim-abolish'
+Plugin 'mbbill/undotree'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,4 +70,7 @@ vnoremap < <gv
 vnoremap <S-Up> :m '<-2<CR>gv
 vnoremap <S-Down> :m '>+1<CR>gv
 
-set undofile
+if has("persistent_undo")
+  set undodir=~/.undodir/
+  set undofile
+endif
