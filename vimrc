@@ -31,15 +31,17 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate'
 
+" Refactoring
+Plugin 'tpope/vim-abolish'
+Plugin 'terryma/vim-multiple-cursors'
+
 " Others
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-abolish'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 Plugin 'mbbill/undotree'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Lokaltog/vim-easymotion'
 
 " Colors
