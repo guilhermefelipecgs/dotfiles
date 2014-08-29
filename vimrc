@@ -40,6 +40,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 Plugin 'mbbill/undotree'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Lokaltog/vim-easymotion'
 
 " Colors
 Plugin 'ntpeters/vim-better-whitespace'
@@ -91,3 +92,4 @@ if has("persistent_undo")
   set undodir=~/.undodir/
   set undofile
 endif
+
