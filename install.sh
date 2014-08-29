@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo apt-get update
+sudo apt-get install exuberant-ctags
+sudo apt-get install silversearcher-ag
+
 if [ ! -d "$HOME/.vim" ]; then
   mkdir "$HOME/.vim"
 fi
