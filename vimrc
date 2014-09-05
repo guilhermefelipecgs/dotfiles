@@ -18,6 +18,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
+Plugin 'rking/ag.vim'
 
 " Rails
 Plugin 'tpope/vim-rails'
