@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'gregsexton/gitv'
 
 Plugin 'tpope/vim-sensible'
 
