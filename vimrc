@@ -41,7 +41,7 @@ Plugin 'terryma/vim-multiple-cursors'
 " Others
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 Plugin 'mbbill/undotree'
