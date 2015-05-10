@@ -1,8 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install exuberant-ctags
-sudo apt-get install silversearcher-ag
+sudo apt-get install exuberant-ctags silversearcher-ag cscope -y
 
 if [ ! -d "$HOME/.vim" ]; then
   mkdir "$HOME/.vim"
@@ -15,6 +14,22 @@ fi
 if [ ! -d "$HOME/.undodir" ]; then
   mkdir "$HOME/.undodir"
 fi
+
+if [ ! -d "$HOME/.config/powerline" ]; then
+  mkdir "$HOME/.config/powerline"
+fi
+
+if [ -f $HOME/.config/powerline/config.json ]; then
+  mv $HOME/.config/powerline/config.json $HOME/.config/powerline/config.json.bak
+fi
+
+echo "{
+  \"ext\": {
+    \"vim\": {
+      \"colorscheme\": \"solarized\"
+    }
+  }
+}" > $HOME/.config/powerline/config.json
 
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim

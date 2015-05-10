@@ -74,7 +74,8 @@ set number
 set noswapfile
 
 if isdirectory(expand("$HOME/.vim/bundle/vim-colorschemes"))
-  colorscheme obsidian
+  set background=dark
+  colorscheme solarized
 endif
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
