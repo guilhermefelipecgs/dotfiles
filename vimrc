@@ -46,6 +46,9 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'vim-scripts/Conque-GDB'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'suan/vim-instant-markdown'
 
 " Colors
 Plugin 'ntpeters/vim-better-whitespace'
@@ -60,18 +63,17 @@ call vundle#end()
 filetype plugin indent on
 
 set mouse=a
-
 set shiftwidth=2
-set expandtab
+"set expandtab
 set softtabstop=2
 set tabstop=2
-
 set textwidth=80
 set colorcolumn=+1
-
+set hls
 set number
-
 set noswapfile
+set lcs=tab:\ \ 
+set list
 
 if isdirectory(expand("$HOME/.vim/bundle/vim-colorschemes"))
   set background=dark
@@ -86,6 +88,7 @@ map <Leader>t :TagbarToggle<CR>
 map <Leader>l :set nu! nornu<CR>
 map <Leader>rl :set nonu rnu!<CR>
 nnoremap <F5> :UndotreeToggle<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Indent lines
 vnoremap > >gv

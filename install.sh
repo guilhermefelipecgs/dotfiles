@@ -3,6 +3,12 @@
 sudo apt-get update
 sudo apt-get install exuberant-ctags silversearcher-ag cscope -y
 
+if [ -x "$(which npm)" ]; then
+	npm install -g instant-markdown-d
+else
+	echo -e "\033[31mnpm not installed.\033[m"
+fi
+
 if [ ! -d "$HOME/.vim" ]; then
   mkdir "$HOME/.vim"
 fi
@@ -41,4 +47,3 @@ fi
 
 ln -s "$PWD/vimrc" "$HOME/.vimrc"
 vim +PluginInstall +qall
-
