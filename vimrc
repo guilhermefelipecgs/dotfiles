@@ -49,6 +49,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-scripts/scons.vim'
 
 " Colors
 Plugin 'ntpeters/vim-better-whitespace'
@@ -64,7 +66,7 @@ filetype plugin indent on
 
 set mouse=a
 set shiftwidth=2
-"set expandtab
+set expandtab
 set softtabstop=2
 set tabstop=2
 set textwidth=80
@@ -79,8 +81,6 @@ if isdirectory(expand("$HOME/.vim/bundle/vim-colorschemes"))
   set background=dark
   colorscheme solarized
 endif
-
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 let mapleader=","
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
@@ -103,3 +103,5 @@ if has("persistent_undo")
   set undofile
 endif
 
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufRead SCons*,SCsub set filetype=scons
