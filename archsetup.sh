@@ -5,24 +5,37 @@ if ! which sudo &> /dev/null; then
   exit
 fi
 
+sudo su <<CONFIG
+localectl set-keymap br-abnt2
+localectl set-locale LANG=pt_BR.UTF-8
+localectl set-x11-keymap br
+ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+sed -i s/#pt_BR.UTF-8/pt_BR.UTF-8/ /etc/locale.gen
+locale-gen
+CONFIG
+
 # PACMAN
-packages="vim termite git sudo cscope ctags the_silver_searcher findutils
-bash-completion gstreamer0.10-plugins udisks2 pavucontrol vlc
-gstreamer0.10-plugins ranger firefox firefox-i18n-pt-br ntfs-3g samba pidgin
-aspell"
-file_manager="thunar thunar-volman gvfs tumbler thunar-archive-plugin"
+packages="wget vim termite git sudo cscope ctags the_silver_searcher findutils
+          bash-completion gstreamer0.10-plugins udisks2 pavucontrol nethogs htop vlc
+          ranger firefox firefox-i18n-pt-br ntfs-3g samba aspell dfc openssh lm_sensors
+          sysstat atop iotop"
+file_manager="thunar thunar-volman gvfs tumbler thunar-archive-plugin
+              ffmpegthumbnailer xdg-user-dirs xarchiver"
 fonts="ttf-dejavu ttf-liberation"
 bluetooth="bluez blueman pulseaudio-bluetooth"
-xorg="xorg-server xorg-server-utils xorg-xinit xorg-xrandr xf86-video-vesa"
+xorg="xorg-server xorg-server-utils xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xprop"
 i3="i3 rofi"
 
 sudo pacman -S --needed --noconfirm $packages $fonts $bluetooth $xorg $i3 \
 $file_manager
 
+# Create Xdg user directories
+xdg-user-dirs-update
+
 # AUR
 package_query_src="https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz"
 yaourt_src="https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz"
-packages_aur="compton jdk ttf-font-awesome"
+packages_aur="compton jdk ttf-font-awesome teiler-git"
 
 ## install package-query for yaourt
 if ! which yaourt &> /dev/null; then
@@ -46,12 +59,4 @@ fi
 
 yaourt -S --needed --noconfirm $packages_aur
 
-sudo su <<CONFIG
-localectl set-keymap br-abnt2
-localectl set-locale LANG=pt_BR.UTF-8
-localectl set-x11-keymap br
-ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-sed -i s/#pt_BR.UTF-8/pt_BR.UTF-8/ /etc/locale.gen
-locale-gen
-CONFIG
 echo "Done"
