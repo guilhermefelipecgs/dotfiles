@@ -15,18 +15,6 @@ separator_block_width = 30
 # variables that are set for worker commands to read.  They don't have to be
 # uppercase, but it makes them easier to distinguish.
 
-# CPU temperature
-# These settings display a bar that starts to grow at 40° and maxes out at
-# 50°.  It's updated every 10 seconds and displays the current temperature as
-# a number if it is 45° or higher.  Overriding "separator_block_width" puts
-# everything closer to the next, related section.
-[cpu temperature]
-command = i3bf-temperature
-SENSOR_PATH = /sys/class/hwmon/hwmon2/temp1_input
-TEMP_RANGE = 20-70
-INTERVAL = 2
-separator_block_width = 10
-
 # CPU usage
 # By default, i3bf-cpu displays a single vertical bar to indicate overall CPU
 # usage.  In this example, PERCORE is enabled to display one bar per core.
