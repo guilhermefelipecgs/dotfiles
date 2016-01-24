@@ -18,7 +18,7 @@ CONFIG
 packages="wget vim termite git sudo cscope ctags the_silver_searcher findutils
           bash-completion gstreamer0.10-plugins udisks2 pavucontrol nethogs htop vlc
           ranger firefox firefox-i18n-pt-br ntfs-3g samba aspell dfc openssh lm_sensors
-          sysstat atop iotop"
+          sysstat atop iotop python-pip"
 file_manager="thunar thunar-volman gvfs tumbler thunar-archive-plugin
               ffmpegthumbnailer xdg-user-dirs xarchiver"
 fonts="ttf-dejavu ttf-liberation"
@@ -58,6 +58,9 @@ if ! which yaourt &> /dev/null; then
 fi
 
 yaourt -S --needed --noconfirm $packages_aur
+
+# Install i3barfodder
+sudo pip install i3barfodder
 
 # Link dotfiles
 for f in *; do
