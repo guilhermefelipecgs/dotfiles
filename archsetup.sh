@@ -60,10 +60,15 @@ fi
 yaourt -S --needed --noconfirm $packages_aur
 
 # Link dotfiles
-for f in $(find *); do
+for f in *; do
   if [[ -f $f && $f != *.sh ]]; then
     ln -s $PWD/$f $HOME/.$f
   fi
+done
+
+# Link config files
+for f in config/*; do
+  ln -s $PWD/$f $HOME/.$f
 done
 
 echo "Done"
