@@ -29,6 +29,7 @@ Plugin 'tpope/vim-rake'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 " Snippets
 Plugin 'honza/vim-snippets'
