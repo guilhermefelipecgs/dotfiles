@@ -38,5 +38,6 @@ export EDITOR=vim
 
 xrandr --dpi 96
 xset s off -dpms
+numlockx
 
 exec i3
