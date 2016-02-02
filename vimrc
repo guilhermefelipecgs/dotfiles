@@ -51,6 +51,7 @@ Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-scripts/scons.vim'
+Plugin 'scrooloose/nerdcommenter'
 
 " Colors
 Plugin 'ntpeters/vim-better-whitespace'
