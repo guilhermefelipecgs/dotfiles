@@ -70,12 +70,12 @@ bindsym $mod+ctrl+l exec i3lock -f
 bindsym Print exec --no-startup-id teiler
 
 # Bind for Player
-bindsym XF86AudioPlay exec--no-startup-id playerctl play-pause
-bindsym $mod+p exec--no-startup-id playerctl play-pause
-bindsym $mod+greater exec--no-startup-id playerctl next
-bindsym $mod+less exec--no-startup-id playerctl previous
-bindsym $mod+bracketleft exec--no-startup-id pactl set-sink-volume 0 +5%
-bindsym $mod+bracketright exec--no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym $mod+p exec --no-startup-id playerctl play-pause
+bindsym $mod+greater exec --no-startup-id playerctl next
+bindsym $mod+less exec --no-startup-id playerctl previous
+bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 0 -5%
 
 set $workspace1 1:
 set $workspace2 2:
