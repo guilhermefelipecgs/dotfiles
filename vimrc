@@ -75,7 +75,7 @@ set noswapfile
 set lcs=tab:\ \ 
 set list
 
-if isdirectory(expand("$HOME/.vim/bundle/vim-colorschemes"))
+if isdirectory(expand("$HOME/.vim/bundle/base16-vim"))
   set background=dark
   let base16colorspace=256
   colorscheme base16-default
