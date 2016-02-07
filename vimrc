@@ -1,11 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -56,7 +52,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Colors
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'chriskempson/base16-vim'
 Plugin 'osyo-manga/vim-over'
 
 " Utility
@@ -81,7 +77,8 @@ set list
 
 if isdirectory(expand("$HOME/.vim/bundle/vim-colorschemes"))
   set background=dark
-  colorscheme solarized
+  let base16colorspace=256
+  colorscheme base16-default
 endif
 
 let mapleader=","
