@@ -36,7 +36,7 @@ fi
 xrandr --dpi 96
 xset s off -dpms
 numlockx
-#sxhkd &
+xsetroot -cursor_name left_ptr
+sxhkd &
 
-#exec bspwm
-exec i3
+exec bspwm
