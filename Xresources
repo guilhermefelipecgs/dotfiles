@@ -1,6 +1,7 @@
 URxvt.font:xft:Monospace:size=14
 URxvt.scrollBar:false
 URxvt.loginShell: true
+URxvt.perl-ext-common:vtwheel
 
 ! ------------------------------------------------------------------------------
 ! Base16 Default

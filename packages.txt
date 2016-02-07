@@ -55,6 +55,7 @@ ttf-font-awesome
 ttf-liberation
 tumbler
 udisks2
+urxvt-vtwheel
 vim
 vlc
 vundle
