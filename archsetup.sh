@@ -1,18 +1,34 @@
 #!/bin/bash
 
-sudo su <<CONFIG
+confirm() {
+  while true; do
+    read -r -p "$1 [y/N]: " response
+    case $response in
+      [yY]) echo true; return 0 ;;
+      [nN]|'') echo false; return 1 ;;
+    esac
+  done
+}
+
+generate_locale=$(confirm "Configure keyboard/localtime/locale?")
+install_packages=$(confirm "Install packages?")
+update_xdg_user_dirs=$(confirm "Update XDG user dirs?")
+link_dot_files=$(confirm "Install dotfiles? (This will overwrite existing dotfiles)")
+
+$generate_locale && sudo su <<CONFIG
 localectl set-keymap br-abnt2
 localectl set-locale LANG=pt_BR.UTF-8
 localectl set-x11-keymap br
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 sed -i s/#pt_BR.UTF-8/pt_BR.UTF-8/ /etc/locale.gen
+sed -i s/#en_US.UTF-8/en_US.UTF-8/ /etc/locale.gen
 locale-gen
 CONFIG
 
-package_query_src="https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz"
-yaourt_src="https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz"
-
 if ! which yaourt &> /dev/null; then
+  package_query_src="https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz"
+  yaourt_src="https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz"
+
   # install package-query for yaourt
   curl $package_query_src > package-query.tar.gz
   tar xf package-query.tar.gz
@@ -32,24 +48,27 @@ if ! which yaourt &> /dev/null; then
   rm -rf yaourt
 fi
 
-yaourt -S --needed --noconfirm $(< packages.txt)
+$install_packages && yaourt -S --needed --noconfirm $(< packages.txt)
 
 # Create Xdg user directories
-xdg-user-dirs-update
+$update_xdg_user_dirs && xdg-user-dirs-update
 
-# Link dotfiles
-for f in *; do
-  if [[ -f $f && $f != *.sh ]]; then
-    ln -sf $PWD/$f $HOME/.$f
-  fi
-done
-
-# Link config files
-for dir in config/*; do
-  for file in $dir/*; do
-    mkdir -p $HOME/.$dir
-    ln -sf $PWD/$file $HOME/.$file
+if $link_dot_files; then
+  echo "Linking dotfiles"
+  # Link dotfiles
+  for f in *; do
+    if [[ -f $f && ! $f =~ \.(sh)|(txt)$ ]]; then
+      ln -sf $PWD/$f $HOME/.$f
+    fi
   done
-done
+
+  # Link config files
+  for dir in config/*; do
+    for file in $dir/*; do
+      mkdir -p $HOME/.$dir
+      ln -sf $PWD/$file $HOME/.$file
+    done
+  done
+fi
 
 echo "Done"
