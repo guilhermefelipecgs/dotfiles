@@ -4,6 +4,7 @@
 
 export EDITOR='vim'
 export BROWSER='firefox'
+export QT_STYLE_OVERRIDE=GTK+
 
 alias ls='ls --color=auto'
 alias l='ls'
