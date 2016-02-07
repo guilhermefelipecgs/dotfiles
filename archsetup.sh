@@ -14,6 +14,7 @@ generate_locale=$(confirm "Configure keyboard/localtime/locale?")
 install_packages=$(confirm "Install packages?")
 update_xdg_user_dirs=$(confirm "Update XDG user dirs?")
 link_dot_files=$(confirm "Install dotfiles? (This will overwrite existing dotfiles)")
+install_vim_plugins=$(confirm "Install vim plugins?")
 
 $generate_locale && sudo su <<CONFIG
 localectl set-keymap br-abnt2
@@ -53,6 +54,8 @@ $install_packages && yaourt -S --needed --noconfirm $(< packages.txt)
 # Create Xdg user directories
 $update_xdg_user_dirs && xdg-user-dirs-update
 
+mkdir -p $HOME/.undodir
+
 if $link_dot_files; then
   echo "Linking dotfiles"
   # Link dotfiles
@@ -70,5 +73,7 @@ if $link_dot_files; then
     done
   done
 fi
+
+$install_vim_plugins && vim +PluginInstall +qall
 
 echo "Done"
