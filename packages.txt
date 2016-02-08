@@ -24,6 +24,7 @@ highlight
 htop
 iotop
 jdk
+lemonbar-xft-git
 libcaca
 lm_sensors
 mediainfo

@@ -84,7 +84,7 @@ super + Return
   urxvt
 
 super + space
-  dmenu_run
+  dmenu_run -fn 'Monospace-14' -nb '#181818' -nf '#585858' -sb '#7cafc2' -sf '#181818'
 
 # make sxhkd reload its configuration files:
 super + Escape
