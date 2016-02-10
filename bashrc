@@ -2,13 +2,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=24
-PANEL_FONT_FAMILY="Monospace-14"
 export EDITOR='vim'
 export BROWSER='firefox'
 export QT_STYLE_OVERRIDE=GTK+
-export PANEL_FIFO PANEL_HEIGHT PANEL_FONT_FAMILY
 export PATH=$PATH:$HOME/bin
 
 alias ls='ls --color=auto'
