@@ -20,7 +20,3 @@ alias lh='ls -lh'
 #PS1='[\u@\h \W]\$ '
 PS1='\342\224\214\e[31m[\t]\e[0m \u:\e[33m\w\e[0m\n\342\224\224\$ '
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-

@@ -5,7 +5,6 @@ atop
 bash-completion
 blueman
 bluez
-bspwm
 compton
 cscope
 ctags
@@ -22,6 +21,7 @@ gstreamer0.10-plugins
 gvfs
 highlight
 htop
+i3
 iotop
 jdk
 lemonbar-xft-git
@@ -40,9 +40,7 @@ pv
 python-pip
 ranger
 rofi
-rxvt-unicode
 samba
-sxhkd
 sysstat
 teiler-git
 the_silver_searcher
@@ -56,7 +54,6 @@ ttf-font-awesome
 ttf-liberation
 tumbler
 udisks2
-urxvt-vtwheel
 vim
 vlc
 vundle
