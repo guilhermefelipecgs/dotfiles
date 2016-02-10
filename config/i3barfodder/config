@@ -44,9 +44,9 @@ SCALE = sqrt
 # This section displays "/home" and any mountpoint that starts with "/media/".
 # Alternatively, you can specify a blacklist of mountpoints that should not be
 # displayed.  In this case, you must remove/comment WHITELIST.
-[storage]
-command = i3bf-storage
-WHITELIST = /,/run/media/*
+#[storage]
+#command = i3bf-storage
+#WHITELIST = /,/run/media/*
 #BLACKLIST = /,/boot
 
 # Time and date
@@ -58,6 +58,7 @@ WHITELIST = /,/run/media/*
 [time/date]
 command = i3bf-timedate
 DATE_FORMAT = %A, %d. %B %Y
+TIME_FORMAT = %H:%M
 LANG = pt_BR.UTF-8
 DATE_COLOR = #99c
 TIME_COLOR = #7c9
