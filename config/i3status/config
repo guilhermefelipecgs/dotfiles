@@ -8,8 +8,6 @@
 
 general {
         colors = true
-        color_good = "#a1b56c"
-        color_bad = "ab4642"
         interval = 5
 }
 
@@ -39,7 +37,7 @@ battery 0 {
 }
 
 run_watch DHCP {
-        pidfile = "/var/run/dhcpcd.pid"
+        pidfile = "/var/run/dhclient*.pid"
 }
 
 run_watch VPN {
@@ -55,4 +53,5 @@ load {
 }
 
 disk "/" {
-        format = "%avail"}
+        format = "%avail"
+}
