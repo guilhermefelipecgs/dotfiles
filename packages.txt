@@ -12,6 +12,7 @@ dfc
 dialog
 dmenu
 dunst
+feh
 ffmpegthumbnailer
 findutils
 firefox
@@ -22,6 +23,7 @@ gvfs
 highlight
 htop
 i3
+imv
 iotop
 jdk
 lemonbar-xft-git
@@ -29,6 +31,7 @@ libcaca
 lm_sensors
 mediainfo
 mpd
+neofetch
 nethogs
 npm
 ntfs-3g
