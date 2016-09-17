@@ -35,7 +35,7 @@ fi
 xrandr --dpi 96
 xset s off -dpms
 numlockx &
-compton --vsync opengl --backend glx &
+compton &
 
 #xsetroot -cursor_name left_ptr
 #sxhkd &
