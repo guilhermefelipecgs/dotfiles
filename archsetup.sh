@@ -14,6 +14,26 @@ confirm() {
   done
 }
 
+mkdir_n_link() {
+  dot=""
+  src=$1
+
+  if [[ $src =~ ^\. ]]; then
+    dot="."
+    src=${src:1}
+  fi
+
+  mkdir -p $HOME/$dot$src
+
+  for file in $src/*; do
+    if [[ -d $file ]]; then
+      mkdir_n_link $dot$file
+    else
+      ln -sf $PWD/$file $HOME/$dot$file
+    fi
+  done
+}
+
 generate_locale=$(confirm "Configure keyboard/localtime/locale?")
 install_packages=$(confirm "Install packages?")
 update_xdg_user_dirs=$(confirm "Update XDG user dirs?")
@@ -72,19 +92,9 @@ if $link_dot_files; then
     fi
   done
 
-  # Link config files
-  for dir in config/*; do
-    for file in $dir/*; do
-      mkdir -p $HOME/.$dir
-      ln -sf $PWD/$file $HOME/.$file
-    done
-  done
+  mkdir_n_link .config
+  mkdir_n_link bin
 
-	# Link bin files
-  mkdir -p $HOME/bin
-  for file in bin/*; do
-    ln -sf $PWD/$file $HOME/$file
-  done
 fi
 
 $install_vim_plugins &&\
