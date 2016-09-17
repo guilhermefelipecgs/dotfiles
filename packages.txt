@@ -47,6 +47,7 @@ fontforge
 gedit
 git
 gnome-calculator
+gnome-common
 gnome-kra-ora-thumbnailer
 gnu-netcat
 gstreamer

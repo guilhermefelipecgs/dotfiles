@@ -72,8 +72,8 @@ if $link_dot_files; then
     fi
   done
 
-  # Link config files
-  for dir in config/*; do
+  # Link bin/config files
+  for dir in bin/* config/*; do
     for file in $dir/*; do
       mkdir -p $HOME/.$dir
       ln -sf $PWD/$file $HOME/.$file
