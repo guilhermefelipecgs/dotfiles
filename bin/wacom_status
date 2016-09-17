@@ -1,0 +1,89 @@
+#!/bin/bash
+
+CAPACITY=$(cat /sys/bus/usb/devices/*/*/*/wacom_battery*/capacity)
+STATUS=$(cat /sys/bus/usb/devices/*/*/*/wacom_battery*/status)
+TMP=/tmp/wacom
+FULL=75
+MID=50
+LOW=25
+CRIT=10
+DISPLAY=0 # [battery, percent]
+
+B0=
+B1=
+B2=
+B3=
+B4=
+
+get_var() {
+  cat $TMP | grep ^$1 | sed s/$1=//
+}
+
+set_var() {
+  sed -i s/$1=*.$/$1=$2/ $TMP
+}
+
+print_status() {
+  if [[ ! -e $TMP ]];then
+    echo -e "I=1\nDISPLAY=$DISPLAY" > $TMP
+  fi
+
+  if [[ $STATUS == "Charging" ]]; then
+    i=$(get_var I)
+
+    i=$(echo $i + 1 | bc) # Increment I
+
+    if [[ $(echo $i % 5 | bc) == 0 ]]; then i=0; fi # Reset I to 0
+
+    set_var I $i
+
+    eval "echo \$B$i"
+    eval "echo \$B$i"
+    echo "#dc9656"
+  elif [[ $STATUS == "Full" ]]; then
+    echo $B4
+    echo $B4
+    echo "#a1b56c"
+  elif [[ $STATUS == "Discharging" ]]; then
+    DISPLAY=$(get_var DISPLAY)
+    if [[ $DISPLAY == 0 ]]; then
+      if [[ $CAPACITY -gt 75 ]]; then
+        echo $B4
+        echo $B4
+      elif [[ $CAPACITY -le 75 && $CAPACITY -gt 50 ]]; then
+        echo $B3
+        echo $B3
+      elif [[ $CAPACITY -le 50 && $CAPACITY -gt 25 ]]; then
+        echo $B2
+        echo $B2
+      elif [[ $CAPACITY -le 25 && $CAPACITY -gt $CRIT ]]; then
+        echo $B1
+        echo $B1
+      elif [[ $CAPACITY -le $CRIT ]]; then
+        echo $B0
+        echo $B0
+      fi
+    else
+      echo "$CAPACITY%"
+      echo "$CAPACITY%"
+    fi
+
+    if [[ $CAPACITY -le $CRIT ]]; then
+      echo "#ab4642"
+    fi
+  fi
+}
+
+change_display() {
+  if [[ $BLOCK_BUTTON == 1 ]];then
+    DISPLAY=$(get_var DISPLAY)
+    if [[ $DISPLAY == 1 ]];then
+      set_var DISPLAY 0
+    else
+      set_var DISPLAY 1
+    fi
+  fi
+}
+
+change_display
+print_status
