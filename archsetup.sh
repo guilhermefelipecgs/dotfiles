@@ -76,7 +76,7 @@ if ! which yaourt &> /dev/null; then
   rm -rf yaourt
 fi
 
-$install_packages && yaourt -S --needed --noconfirm $(< packages.txt)
+$install_packages && yaourt -S --needed --noconfirm $(grep "^\w" packages.txt)
 
 # Create Xdg user directories
 $update_xdg_user_dirs && xdg-user-dirs-update
