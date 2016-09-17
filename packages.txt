@@ -13,7 +13,7 @@
 #wmctrl
 #xv
 #zenity
-$gspell
+#gspell
 alsa-utils
 arandr
 aria2
