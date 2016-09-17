@@ -1,8 +1,12 @@
 #!/bin/bash
 
+log=$HOME/archsetup.log
+
+exec &> >(tee $log)
+
 confirm() {
   while true; do
-    read -r -p "$1 [y/N]: " response
+    read -n 1 -p "$(echo -e "\n$1 [y/N]:") " response
     case $response in
       [yY]) echo true; return 0 ;;
       [nN]|'') echo false; return 1 ;;
@@ -15,6 +19,9 @@ install_packages=$(confirm "Install packages?")
 update_xdg_user_dirs=$(confirm "Update XDG user dirs?")
 link_dot_files=$(confirm "Install dotfiles? (This will overwrite existing dotfiles)")
 install_vim_plugins=$(confirm "Install vim plugins?")
+update_pkgfile=$(confirm "Update pkgfile?")
+
+echo
 
 $generate_locale && sudo su <<CONFIG
 localectl set-keymap br-abnt2
@@ -74,6 +81,10 @@ if $link_dot_files; then
   done
 fi
 
-$install_vim_plugins && vim +PluginInstall +qall
+$install_vim_plugins &&\
+  echo "Installing vim plugins" &&\
+  vim +PluginInstall +qall &> /dev/null
+
+$update_pkgfile && sudo pkgfile -u
 
 echo "Done"

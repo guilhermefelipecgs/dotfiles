@@ -2,10 +2,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR='vim'
-export BROWSER='firefox'
-export QT_STYLE_OVERRIDE=GTK+
+export EDITOR=vim
+export BROWSER=firefox
+export QT_STYLE_OVERRIDE=gtk2
 export PATH=$PATH:$HOME/bin
+
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 alias ls='ls --color=auto'
 alias l='ls'

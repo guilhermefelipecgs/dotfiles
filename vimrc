@@ -78,7 +78,7 @@ set list
 if isdirectory(expand("$HOME/.vim/bundle/base16-vim"))
   set background=dark
   let base16colorspace=256
-  colorscheme base16-default
+  colorscheme base16-default-dark
 endif
 
 let mapleader=","
