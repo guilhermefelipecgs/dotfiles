@@ -191,17 +191,16 @@ bar {
 
   colors {
     separator $base03
-      background $base00
-      statusline $base05
-      focused_workspace $base0C $base0D $base00
-      active_workspace $base02 $base02 $base07
-      inactive_workspace $base00 $base00 $base03
-      urgent_workspace $base08 $base08 $base07
+    background $base00
+    statusline $base05
+    focused_workspace $base0C $base0D $base00
+    active_workspace $base02 $base02 $base07
+    inactive_workspace $base00 $base00 $base03
+    urgent_workspace $base08 $base08 $base07
   }
 }
 
 new_window pixel 1
 #hide_edge_borders both
 
-exec --no-startup-id $HOME/.fehbg
 exec --no-startup-id blueman-applet

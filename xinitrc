@@ -35,6 +35,7 @@ fi
 xrandr --dpi 96
 xset s off -dpms
 numlockx &
+./.fehbg &
 compton &
 
 #xsetroot -cursor_name left_ptr
