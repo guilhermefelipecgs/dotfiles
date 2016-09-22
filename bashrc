@@ -8,7 +8,7 @@ export QT_STYLE_OVERRIDE=gtk2
 export PATH=$PATH:$HOME/bin
 export TERMINAL=termite
 
-if which ruby >/dev/null && which gem >/dev/null; then
+if which ruby &> /dev/null && which gem &> /dev/null; then
   PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
