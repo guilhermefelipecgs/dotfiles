@@ -81,7 +81,7 @@ bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86Calculator exec gnome-calculator
 
 set $terminal 0:
-set $firefox 1:🌐
+set $firefox 1:
 set $code 2:
 set $workspace3 3:
 set $server 4:
