@@ -67,7 +67,8 @@ bindsym $mod+ctrl+l exec --no-startup-id lock.sh
 #bindsym $mod+d focus child
 
 # Bind for PrtScn/SysRq
-bindsym Print exec --no-startup-id teiler
+#bindsym Print exec --no-startup-id teiler
+bindsym Print exec --no-startup-id scrot
 
 # Bind for Player
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -79,24 +80,23 @@ bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 0 -5%
 
 bindsym XF86Calculator exec gnome-calculator
 
-set $linux 0:
-set $firefox 1:
-set $chrome 2:
-set $terminal 3:
-set $code 4:
-set $server 5:
-set $video 6:
-set $workspace6 7:
-set $steam 8:
-set $whatsie 9:
-set $download 10:
-set $spotify 11:
+set $terminal 0:
+set $firefox 1:🌐
+set $code 2:
+set $workspace3 3:
+set $server 4:
+set $video 5:
+set $workspace6 6:
+set $steam 7:
+set $whatsie 8:
+set $download 9:
+set $spotify 10:
 
 # switch to workspace
-bindsym $mod+apostrophe workspace $linux
+bindsym $mod+apostrophe workspace $terminal
 bindsym $mod+1 workspace $firefox
-bindsym $mod+2 workspace $terminal
-bindsym $mod+3 workspace $code
+bindsym $mod+2 workspace $code
+bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $server
 bindsym $mod+5 workspace $video
 bindsym $mod+6 workspace $workspace6
@@ -106,10 +106,10 @@ bindsym $mod+9 workspace $download
 bindsym $mod+0 workspace $spotify
 
 # move focused container to workspace
-bindsym $mod+Shift+apostrophe move container to workspace $linux
+bindsym $mod+Shift+apostrophe move container to workspace $terminal
 bindsym $mod+Shift+1 move to workspace $firefox
-bindsym $mod+Shift+2 move to workspace $terminal
-bindsym $mod+Shift+3 move to workspace $code
+bindsym $mod+Shift+2 move to workspace $code
+bindsym $mod+Shift+3 move to workspace $workspace3
 bindsym $mod+Shift+4 move to workspace $server
 bindsym $mod+Shift+5 move to workspace $video
 bindsym $mod+Shift+6 move to workspace $workspace6
@@ -124,6 +124,7 @@ assign [instance="chrome"] $chrome
 assign [class="stremio"] $video
 assign [instance="netflix"] $video
 assign [class="Steam"] $steam
+assign [title="Steam"] $steam
 assign [class="Whatsie"] $whatsie
 assign [class="qBittorrent"] $download
 for_window [class="Spotify"] move to workspace $spotify
@@ -183,24 +184,27 @@ client.focused_inactive $base02 $base02 $base03 $base01
 client.unfocused $base01 $base01 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
 
-bar {
-  status_command i3blocks
-  tray_output primary
-  position top
-  strip_workspace_numbers yes
+#bar {
+  #status_command i3blocks
+  #tray_output primary
+  #position top
+  #strip_workspace_numbers yes
 
-  colors {
-    separator $base03
-    background $base00
-    statusline $base05
-    focused_workspace $base0C $base0D $base00
-    active_workspace $base02 $base02 $base07
-    inactive_workspace $base00 $base00 $base03
-    urgent_workspace $base08 $base08 $base07
-  }
-}
+  #colors {
+    #separator $base03
+    #background $base00
+    #statusline $base05
+    #focused_workspace $base0C $base0D $base00
+    #active_workspace $base02 $base02 $base07
+    #inactive_workspace $base00 $base00 $base03
+    #urgent_workspace $base08 $base08 $base07
+  #}
+#}
 
 new_window pixel 1
 #hide_edge_borders both
 
+exec_always --no-startup-id killall polybar; polybar example
 exec --no-startup-id blueman-applet
+exec --no-startup-id dropbox
+exec --no-startup-id qbittorrent
