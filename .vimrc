@@ -3,6 +3,8 @@ filetype off
 
 call vundle#begin()
 
+Plugin 'uguu-org/vim-matrix-screensaver'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -51,7 +53,6 @@ Plugin 'vim-scripts/scons.vim'
 Plugin 'scrooloose/nerdcommenter'
 
 " Colors
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'chriskempson/base16-vim'
 Plugin 'osyo-manga/vim-over'
 

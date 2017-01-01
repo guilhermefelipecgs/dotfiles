@@ -7,6 +7,8 @@ export BROWSER=firefox
 export QT_STYLE_OVERRIDE=gtk2
 export PATH=$PATH:$HOME/bin
 export TERMINAL=termite
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_NDK_ROOT=$HOME/Android/Sdk/ndk-bundle
 
 if which ruby &> /dev/null && which gem &> /dev/null; then
   PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
