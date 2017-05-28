@@ -6,8 +6,13 @@ rofi.color-window: #181818, #7CAFC2, #d8d8d8
 rofi.color-normal: #181818, #d8d8d8, #181818, #282828, #d8d8d8
 rofi.color-active: #fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3
 rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
-rofi.width: 20
+rofi.width: 100
+rofi.fixed-num-lines: false
+rofi.location: 2
+rofi.bw: 0
 rofi.hide-scrollbar: true
+rofi.yoffset: 29
+rofi.padding: 1
 
 XTerm*faceName: dejavu sans mono
 XTerm*faceSize: 14.0
