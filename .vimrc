@@ -75,6 +75,7 @@ set number
 set noswapfile
 set lcs=tab:\ \ 
 set list
+set diffopt=vertical,iwhite
 
 if isdirectory(expand("$HOME/.vim/bundle/base16-vim"))
   set background=dark

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+caps=$(xset q | grep Caps | sed "s/^.*Caps\ Lock:\s*\(o[n\|f]f\?\).*/\1/")
+
+instance="CAPS"
+
+[[ -n $BLOCK_INSTANCE ]] && instance=$BLOCK_INSTANCE
+
+
+if [[ $caps == on ]]; then
+  echo $instance
+  echo $instance
+  echo "#ab4642"
+fi
