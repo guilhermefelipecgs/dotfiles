@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+icon=
+pid=$(pidof redshift)
+
+if [[ -n pid ]]; then
+  echo $icon 
+  echo $icon 
+  echo "#ffce92"
+fi
