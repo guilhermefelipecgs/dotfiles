@@ -1,4 +1,2 @@
 #!/bin/sh
-convert -size 128x128 canvas:#181818 tmp.jpg
-feh --bg-fill --no-fehbg tmp.jpg
-rm tmp.jpg
+feh --no-fehbg --bg-fill '/home/guilherme/.config/wpg/wallpapers/astronaut-jellyfish-space-digital-art-uhdpaper.com-hd-107.jpg' 
