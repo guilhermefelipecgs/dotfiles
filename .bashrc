@@ -7,7 +7,6 @@
 
 export EDITOR=vim
 export BROWSER=firefox
-export QT_QPA_PLATFORMTHEME=gtk2
 export PATH=$PATH:$HOME/bin
 export TERMINAL=kitty
 export XDG_CONFIG_HOME=$HOME/.config
