@@ -5,13 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-(cat ~/.cache/wal/sequences &)
-
 export EDITOR=vim
 export BROWSER=firefox
-export QT_STYLE_OVERRIDE=gtk2
+export QT_QPA_PLATFORMTHEME=gtk2
 export PATH=$PATH:$HOME/bin
-export TERMINAL=termite
+export TERMINAL=kitty
 export XDG_CONFIG_HOME=$HOME/.config
 
 if which ruby &> /dev/null && which gem &> /dev/null; then
@@ -32,7 +30,7 @@ source /usr/share/git/completion/git-prompt.sh
 
 z() {
   local file
-  file="$(find / -executable -type d -not -path '*/\.*' 2>/dev/null | fzf)"
+  file="$(find / -executable -type d -not -path '*/\.*' -not -path '*target*' -not -path '*cache*' 2>/dev/null | fzf)"
   cd -- $file
 }
 
