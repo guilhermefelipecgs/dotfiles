@@ -32,6 +32,7 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-padding = 1
 label-focused-background = ${color.blue}
+label-focused-foreground = ${color.bg}
 
 label-empty= %index%
 label-empty-padding = 1
@@ -40,7 +41,7 @@ label-empty-foreground = ${color.bg_alt}
 label-occupied = %index%
 label-occupied-padding = 1
 label-occupied-background = ${color.fg}
-label-occupied-foreground = ${color.blue}
+label-occupied-foreground = ${color.bg}
 
 [module/xwindow]
 type = internal/xwindow
@@ -87,7 +88,7 @@ type = custom/text
 
 content = 
 content-background = ${color.fg}
-content-foreground = ${color.blue}
+content-foreground = ${color.bg}
 content-padding = 1
 
 ; vim: ft=dosini
