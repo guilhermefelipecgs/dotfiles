@@ -11,6 +11,7 @@ purple = #d3869b
 aqua = #8ec07c
 
 [bar/top]
+monitor = XWAYLAND0
 width = 100%
 height = 30
 
@@ -27,7 +28,7 @@ modules-right = cpu memory date power
 module-margin = 1
 
 font-0 = DejaVu Sans Mono Nerd Font:size=12:style=bold;2
-font-1 = DejaVu Sans Mono Nerd Font:size=16:style=bold;3
+font-1 = DejaVu Sans Mono Nerd Font:size=16;3
 
 [module/bspwm]
 type = internal/bspwm
@@ -49,7 +50,7 @@ label-occupied-foreground = ${color.bg}
 [module/xwindow]
 type = internal/xwindow
 
-label-maxlen = 70
+label-maxlen = 40
 
 [module/date]
 type = internal/date
@@ -76,12 +77,19 @@ type = internal/memory
 
 format = <bar-used>
 
+bar-used-gradient = false
 bar-used-indicator =
-bar-used-width = 15
+bar-used-width = 10
 bar-used-foreground-0 = ${color.green}
-bar-used-foreground-1 = ${color.blue}
-bar-used-foreground-2 = ${color.purple}
-bar-used-foreground-3 = ${color.red}
+bar-used-foreground-1 = ${color.green}
+bar-used-foreground-2 = ${color.green}
+bar-used-foreground-3 = ${color.green}
+bar-used-foreground-4 = ${color.green}
+bar-used-foreground-5 = ${color.green}
+bar-used-foreground-6 = ${color.yellow}
+bar-used-foreground-7 = ${color.yellow}
+bar-used-foreground-8 = ${color.red}
+bar-used-foreground-9 = ${color.red}
 bar-used-fill = %{T2}ﭳ%{T-}
 bar-used-empty = %{T2}ﭳ%{T-}
 bar-used-empty-foreground = ${color.bg_alt}
