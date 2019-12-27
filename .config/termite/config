@@ -48,7 +48,8 @@ scrollback_lines = 10000
 
 foreground = #ebdbb2
 #foreground_bold = #ffffff
-background = #1d2021
+#background = #1d2021
+background = #282828
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -57,7 +58,8 @@ background = #1d2021
 #highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
-color0 = #1d2021
+#color0 = #1d2021
+color0 = #282828
 color1 = #fb4934
 color2 = #b8bb26
 color3 = #fabd2f

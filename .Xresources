@@ -1,6 +1,8 @@
-*background: #1d2021
+;*background: #1d2021
+*background: #282828
 *foreground: #ebdbb2
-*color0: #1d2021
+;*color0: #1d2021
+*color0: #282828
 *color1: #fb4934
 *color2: #b8bb26
 *color3: #fabd2f

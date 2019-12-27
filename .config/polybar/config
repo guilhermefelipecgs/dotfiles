@@ -1,5 +1,6 @@
 [color]
-bg = #1d2021
+;bg = #1d2021
+bg = #282828
 bg_alt = #928374
 fg = #ebdbb2
 fg_alt = #a89984
