@@ -1,8 +1,0 @@
-#
-# ~/.xprofile
-#
-
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-export QT_STYLE_OVERRIDE=gtk2
-export QT_QPA_PLATFORMTHEME=gtk2

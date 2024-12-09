@@ -1,3 +1,11 @@
+if [ -z "$TMUX" ]; then 
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+
+  tmux attach -t default || tmux new -s default
+fi
+
 # Enabl Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -31,6 +39,9 @@ alias lh='ls -lh'
 alias grep='grep --color=auto'
 alias v='nvim'
 
+export GPG_TTY=$TTY
+export PINENTRY_USER_DATA="USE_CURSES=1"
+
 zstyle ':completion:*' menu select
 
 precmd () { print -Pn "\e]2;%n@%m:%~\a" }
@@ -56,6 +67,16 @@ bindkey -v '^R' redo
 eval "$(zoxide init zsh)"
 . /opt/asdf-vm/asdf.sh
 eval $(thefuck --alias)
+
+
+# sources mac
+eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
+eval $(thefuck --alias)
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
