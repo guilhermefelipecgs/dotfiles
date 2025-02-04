@@ -7,7 +7,8 @@ return {
   },
   opts = {
     layout = {
-      default_direction = "left"
+      default_direction = "left",
+      max_width = { 100, 0.3 },
     },
     close_on_select = true,
   },

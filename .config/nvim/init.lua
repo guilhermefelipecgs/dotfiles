@@ -5,14 +5,34 @@ function WinBar()
     return ""
   end
 
-  -- local path = string.gsub(vim.fn.expand("%:p:h"), vim.fn.getcwd(), "")
-  local path = string.sub(vim.fn.expand("%:p:h"), string.len(vim.fn.getcwd()) + 2)
+  local only_dir = vim.fn.expand("%:p:h")
+  local cwd = vim.fn.getcwd()
+
+  local path = string.sub(only_dir, string.len(cwd) + 2)
+
+  if string.sub(only_dir, 0, string.len(cwd)) ~= cwd then
+    path = vim.fn.expand("%:p:h")
+  end
+
+
   local splitted = vim.fn.split(path, "/")
 
   local separator = " / "
   local formatted = ""
+  local prefix = false
+
   for i, name in ipairs(splitted) do
-    formatted = formatted .. separator .. name
+    if name == "" then
+      prefix = true
+      formatted = formatted .. "/"
+    else
+      if prefix then
+        formatted = formatted .. "/ " .. name
+        prefix = false
+      else
+        formatted = formatted .. separator .. name
+      end
+    end
   end
 
   if formatted == "" then

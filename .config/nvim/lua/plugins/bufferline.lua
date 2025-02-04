@@ -25,14 +25,14 @@ return {
           items = {
             groups.builtin.ungrouped,
             {
-              name = "Test",
+              name = "test",
               icon = "󰂓",
               matcher = function(buf)
-                return buf.path:match("test/")
+                return buf.path:match("/test/")
               end
             },
             {
-              name = "External",
+              name = "ext",
               icon = "",
               auto_close = true,
               matcher = function(buf)
@@ -50,16 +50,16 @@ return {
     })
   end,
   keys = {
-    { "<leader>1",   "<cmd>BufferLineGoToBuffer 1<cr>" },
-    { "<leader>2",   "<cmd>BufferLineGoToBuffer 2<cr>" },
-    { "<leader>3",   "<cmd>BufferLineGoToBuffer 3<cr>" },
-    { "<leader>4",   "<cmd>BufferLineGoToBuffer 4<cr>" },
-    { "<leader>5",   "<cmd>BufferLineGoToBuffer 5<cr>" },
-    { "<leader>6",   "<cmd>BufferLineGoToBuffer 6<cr>" },
-    { "<leader>7",   "<cmd>BufferLineGoToBuffer 7<cr>" },
-    { "<leader>8",   "<cmd>BufferLineGoToBuffer 8<cr>" },
-    { "<leader>9",   "<cmd>BufferLineGoToBuffer 9<cr>" },
-    { "<leader>0",   "<cmd>BufferLineGoToBuffer 99<cr>" },
+    { "<leader>1",   "<cmd>lua require('bufferline').go_to(1, true)<cr>" },
+    { "<leader>2",   "<cmd>lua require('bufferline').go_to(2, true)<cr>" },
+    { "<leader>3",   "<cmd>lua require('bufferline').go_to(3, true)<cr>" },
+    { "<leader>4",   "<cmd>lua require('bufferline').go_to(4, true)<cr>" },
+    { "<leader>5",   "<cmd>lua require('bufferline').go_to(5, true)<cr>" },
+    { "<leader>6",   "<cmd>lua require('bufferline').go_to(6, true)<cr>" },
+    { "<leader>7",   "<cmd>lua require('bufferline').go_to(7, true)<cr>" },
+    { "<leader>8",   "<cmd>lua require('bufferline').go_to(8, true)<cr>" },
+    { "<leader>9",   "<cmd>lua require('bufferline').go_to(9, true)<cr>" },
+    { "<leader>0",   "<cmd>lua require('bufferline').go_to(99, true)<cr>" },
     { "<leader>w",   "<cmd>Bdelete<cr>" },
     { "<leader>bco", "<cmd>BufferLineCloseOthers<cr>" },
   }
